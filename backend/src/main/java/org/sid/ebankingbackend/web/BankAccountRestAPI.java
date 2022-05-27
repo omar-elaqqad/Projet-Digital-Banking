@@ -30,7 +30,7 @@ public class BankAccountRestAPI {
         return bankAccountService.accountHistory(accountId);
     }
     @GetMapping("/accounts/search/{customerid}")
-    public List<BankAccountDTO> searchAccounts(@RequestParam(name = "customerid",defaultValue = "") Long customerid){
+    public List<BankAccountDTO> searchAccounts(@PathVariable(name = "customerid") Long customerid){
         return bankAccountService.searchAccounts(customerid);
     }
 
