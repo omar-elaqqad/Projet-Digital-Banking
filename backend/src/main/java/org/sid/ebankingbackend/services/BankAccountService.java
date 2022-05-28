@@ -36,4 +36,6 @@ public interface BankAccountService {
 
 
     List<BankAccountDTO> searchAccounts(Long id);
+
+    void deleteAccount(String accountId);
 }

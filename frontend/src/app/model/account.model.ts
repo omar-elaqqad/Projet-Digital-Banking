@@ -3,4 +3,5 @@ export interface Account{
   balance :number ;
   date :Date ;
   status : typeof status;
+  type : String ;
 }

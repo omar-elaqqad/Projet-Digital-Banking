@@ -28,9 +28,5 @@ export class AccountService {
     return this.http.delete(environment.backendHost+"/accounts/"+id)
   }
 
-  public  getAccountOperaations(account :Account):Observable<Array<Operation>>{
-    return  this.http.get<Array<Operation>>(environment.backendHost+"/accounts/{accountId}/operations"+account.id)
-
-  }
 
 }

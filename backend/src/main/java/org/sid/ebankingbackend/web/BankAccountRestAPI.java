@@ -25,6 +25,7 @@ public class BankAccountRestAPI {
     public List<BankAccountDTO> listAccounts(){
         return bankAccountService.bankAccountList();
     }
+
     @GetMapping("/accounts/{accountId}/operations")
     public List<AccountOperationDTO> getHistory(@PathVariable String accountId){
         return bankAccountService.accountHistory(accountId);
@@ -57,5 +58,10 @@ public class BankAccountRestAPI {
                 transferRequestDTO.getAccountSource(),
                 transferRequestDTO.getAccountDestination(),
                 transferRequestDTO.getAmount());
+    }
+
+    @DeleteMapping("/accounts/{id}")
+    public void deleteAccount(@PathVariable String id){
+        bankAccountService.deleteAccount(id);
     }
 }

@@ -210,4 +210,10 @@ public class BankAccountServiceImpl implements BankAccountService {
         }).collect(Collectors.toList());
         return bankAccountDTOS;
     }
+
+    @Override
+    public void deleteAccount(String accountId) {
+        bankAccountRepository.deleteById(accountId);
+    }
+
 }

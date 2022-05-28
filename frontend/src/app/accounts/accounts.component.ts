@@ -34,7 +34,7 @@ export class AccountsComponent implements OnInit {
     let conf=confirm("Are you sure ");
     if(!conf) return;
     this.accountservice.deleteAccount(a.id).subscribe({
-      next : (resp )=>{
+      next : (qny )=>{
         this.accounts=this.accounts.pipe(
           map(resp=>{
             let index=resp.indexOf(a);
