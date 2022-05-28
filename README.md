@@ -27,3 +27,10 @@ Travail à faire :
   6. Sécuriser l'application Digital Banking en utilisant Spring Security et JWT
   7. Créer la partie Frontend Web en utilisant Angular
   8. Créer la partie Frontend Mobile avec Flutter
+# this how it looks like
+![image](https://user-images.githubusercontent.com/80116765/170832434-5adcc43a-a615-4f6c-baae-2cdc848c43f2.png)
+![image](https://user-images.githubusercontent.com/80116765/170832441-e50374b8-2bb0-401d-847d-3a7fafe2aa65.png)
+![image](https://user-images.githubusercontent.com/80116765/170832446-2cbcf29f-2a89-49c3-9a74-d833994e404e.png)
+![image](https://user-images.githubusercontent.com/80116765/170832451-eed89a67-2d33-4a07-8b5b-a7310541d2e5.png)
+![image](https://user-images.githubusercontent.com/80116765/170832458-cbe3a83f-bdf5-4d77-8710-59a7488fb57a.png)
+
