@@ -11,6 +11,7 @@ import {CustomerService} from "./services/customer.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import { NewCustomerComponent } from './new-customer/new-customer.component';
 import { HistoryComponent } from './history/history.component';
+import { SearchaccountComponent } from './searchaccount/searchaccount.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HistoryComponent } from './history/history.component';
     AccountsComponent,
     NewCustomerComponent,
     HistoryComponent,
+    SearchaccountComponent,
   ],
   imports: [
     BrowserModule,

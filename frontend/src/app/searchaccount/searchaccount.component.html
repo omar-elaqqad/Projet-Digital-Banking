@@ -1,0 +1,56 @@
+<div class="container mt-2">
+  <ng-container *ngIf="accounts | async as listaccounts ;else failureorloading " class="mt-2">
+    <div class="card">
+      <div class="card-header">
+        Accounts
+      </div>
+      <div class="card-body">
+        <table class="table mt-2" class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">DATECREATED</th>
+            <th scope="col">BALANCE</th>
+            <th scope="col">STATUS</th>
+            <th scope="col">TYPE</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let a of accounts |async">
+            <td>{{a.balance}}</td>
+            <td>{{a.date}}</td>
+            <td>{{a.status}}</td>
+            <td>{{a.type}}</td>
+            <td>
+              <button (click)="handleDeleteAccount(a)" class="btn btn-danger">
+                <i class="bi bi-trash"></i>
+              </button>
+            <td>
+              <button [routerLink]="['/account-history', a.id]" class="btn btn-info">
+                Account Operation
+              </button>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #failureorloading>
+
+
+    <ng-container *ngIf="errorMessage;else loading">
+      <div class="text-danger">
+        {{errorMessage }}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading .........
+    </ng-template>
+
+  </ng-template>
+
+</div>
+
