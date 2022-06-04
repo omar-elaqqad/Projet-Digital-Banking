@@ -28,6 +28,7 @@ Travail à faire :
   7. Créer la partie Frontend Web en utilisant Angular
   8. Créer la partie Frontend Mobile avec Flutter
 # this how it looks like
+![image](https://user-images.githubusercontent.com/80116765/172027655-db99ba33-9261-4b12-af7e-5f63b9e5454f.png)
 ![image](https://user-images.githubusercontent.com/80116765/170832434-5adcc43a-a615-4f6c-baae-2cdc848c43f2.png)
 ![image](https://user-images.githubusercontent.com/80116765/170832441-e50374b8-2bb0-401d-847d-3a7fafe2aa65.png)
 ![image](https://user-images.githubusercontent.com/80116765/170832446-2cbcf29f-2a89-49c3-9a74-d833994e404e.png)
