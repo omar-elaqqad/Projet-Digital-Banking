@@ -13,12 +13,14 @@ import org.sid.ebankingbackend.exceptions.CustomerNotFoundException;
 import org.sid.ebankingbackend.repositories.AccountOperationRepository;
 import org.sid.ebankingbackend.repositories.BankAccountRepository;
 import org.sid.ebankingbackend.repositories.CustomerRepository;
+import org.sid.ebankingbackend.security.service.SecurityService;
 import org.sid.ebankingbackend.services.BankAccountService;
 import org.sid.ebankingbackend.services.BankService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
@@ -109,6 +111,30 @@ public class EbankingBackendApplication {
             });
         };
 
+    }
+
+    @Bean
+    BCryptPasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    CommandLineRunner saveUsers(SecurityService securityService){
+        return args ->{
+            securityService.saveNewUser("ketlas","1234","1234");
+            securityService.saveNewUser("ahmed","1234","1234");
+            securityService.saveNewUser("mohammed","1234","1234");
+
+            securityService.saveNewRole("USER","");
+            securityService.saveNewRole("ADMIN","");
+
+            securityService.addRoleToUser("ketlas","USER");
+            securityService.addRoleToUser("ketlas","ADMIN");
+            securityService.addRoleToUser("mohammed","USER");
+            securityService.addRoleToUser("ahmed","USER");
+
+
+        };
     }
 
 }

@@ -1,5 +1,5 @@
 <div class="container mt-2">
-  <ng-container *ngIf="operations | async as listoperation ;else failureorloading " class="mt-2">
+  <ng-container *ngIf="accountObservable | async as accountDetails ;else failureorloading " class="mt-2">
     <div class="card">
       <div class="card-header">
         Accounts
@@ -17,8 +17,8 @@
           </thead>
 
           <tbody>
-          <tr *ngFor="let o of operations |async">
-            <td>{{o.date}}</td>
+          <tr *ngFor="let o of accountDetails.accountOperationDTOS ">
+            <td>{{o.operationDate}}</td>
             <td>{{o.amount}}</td>
             <td>{{o.type}}</td>
             <td>{{o.description}}</td>
@@ -28,6 +28,13 @@
           </tbody>
         </table>
       </div>
+
+      <ul class="nav nav-pills float-end mb-3 ms-1">
+        <li *ngFor="let item of [].constructor(accountDetails.totalPages);let page=index">
+          <a [ngClass]="page==currentPage?'btn-info':'btn-outline-info'" (click)="toPage(page)" class="btn  ms-1 mt-1">{{page}}</a>
+        </li>
+      </ul>
+
     </div>
   </ng-container>
 

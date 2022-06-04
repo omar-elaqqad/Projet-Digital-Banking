@@ -12,6 +12,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { NewCustomerComponent } from './new-customer/new-customer.component';
 import { HistoryComponent } from './history/history.component';
 import { SearchaccountComponent } from './searchaccount/searchaccount.component';
+import {LoginComponent} from "./login/login.component";
+import {authInterceptorProviders} from "./utils/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { SearchaccountComponent } from './searchaccount/searchaccount.component'
     NewCustomerComponent,
     HistoryComponent,
     SearchaccountComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { SearchaccountComponent } from './searchaccount/searchaccount.component'
     ReactiveFormsModule
   ],
   providers: [
-    CustomerService
+    CustomerService,
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

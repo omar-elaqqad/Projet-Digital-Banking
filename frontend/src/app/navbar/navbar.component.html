@@ -32,6 +32,16 @@
           </ul>
         </li>
       </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item" *ngIf="!isLogin">
+          <a  class="nav-link btn btn-primary text-white"
+              aria-current="page" routerLink="/login">
+            Login
+          </a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>

@@ -5,13 +5,16 @@ import {AccountsComponent} from "./accounts/accounts.component";
 import {NewCustomerComponent} from "./new-customer/new-customer.component";
 import {HistoryComponent} from "./history/history.component";
 import {SearchaccountComponent} from "./searchaccount/searchaccount.component";
+import {LoginComponent} from "./login/login.component";
+import {AuthGuard} from "./utils/auth-guard";
 
 const routes: Routes = [
-  { path :"customers",component :CustomersComponent},
-  { path :"account/:customerId",component :AccountsComponent},
-  {path : "accounts",component :SearchaccountComponent},
-  {path :"new-customer",component :NewCustomerComponent},
-  {path: "account-history/:accountId",component:HistoryComponent}
+  { path :"customers",component :CustomersComponent,canActivate:[AuthGuard]},
+  { path :"login",component :LoginComponent},
+  { path :"account/:customerId",component :AccountsComponent,canActivate:[AuthGuard]},
+  {path : "accounts",component :SearchaccountComponent,canActivate:[AuthGuard]},
+  {path :"new-customer",component :NewCustomerComponent,canActivate:[AuthGuard]},
+  {path: "account-history/:accountId",component:HistoryComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({
